@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  host_name: MyString
+  memoria: MyString
+  cpu: MyString
+  hd: 
+  garantia: MyString
+
+two:
+  host_name: MyString
+  memoria: MyString
+  cpu: MyString
+  hd: 
+  garantia: MyString

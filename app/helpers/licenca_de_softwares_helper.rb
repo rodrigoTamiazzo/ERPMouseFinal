@@ -1,0 +1,2 @@
+module LicencaDeSoftwaresHelper
+end

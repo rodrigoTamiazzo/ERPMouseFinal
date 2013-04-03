@@ -1,0 +1,40 @@
+<h1>Lista de Licença de Softwares</h1>
+
+<table class="table table-striped">
+ <thead>
+  <tr>
+    <th>Número da Licença</th>
+    <th>Produto</th>
+    <th>Quantidade</th>
+    <th>Estado</th>
+    <th>Data de Expiração</th>
+    <th>Valor de Compra</th>
+    <th>Data de Compra</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ </thead>
+<tbody>
+<% @licenca_de_softwares.each do |licenca_de_software| %>
+  <tr>
+    <td><%= licenca_de_software.numero_da_licenca %></td>
+    <td><%= licenca_de_software.produto %></td>
+    <td><%= licenca_de_software.quantidade %></td>
+    <td><%= licenca_de_software.status %></td>
+    <td><%= licenca_de_software.data_de_expiracao.to_formatted_s(:d_m_y) %></td>
+    <td><%= licenca_de_software.valor_de_compra %></td>
+    <td><%= licenca_de_software.data_de_compra.to_formatted_s(:d_m_y) %></td>
+    <td><%= link_to 'Visualizar', licenca_de_software, :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Editar', edit_licenca_de_software_path(licenca_de_software), :class => "btn btn-small dark-blue"%></td>
+    <td><%= link_to 'Excluir', licenca_de_software, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Gerar Etiqueta', "/licenca_de_softwares/etiqueta/#{licenca_de_software.id}", :class => "btn btn-small dark-blue" %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'Nova Licença de Software', new_licenca_de_software_path, :class => "btn btn-small dark-blue" %>
+<%= link_to 'Relatório', {:controller => "licenca_de_softwares", :action => "relatorio"} , :class => "btn btn-small dark-blue"  %>

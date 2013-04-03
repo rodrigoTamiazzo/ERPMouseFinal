@@ -1,0 +1,41 @@
+<%= form_for(@telefone) do |f| %>
+  <% if @telefone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@telefone.errors.count, "error") %> prohibited this telefone from being saved:</h2>
+
+      <ul>
+      <% @telefone.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Número Serial" %><br />
+    <%= f.text_field :numero_serial %>
+  </div>
+  <div class="field">
+    <%= f.label :garantia %><br />
+    <%= f.text_field :garantia %>
+  </div>
+  <div class="field">
+    <%= f.label :marca%><br />
+    <%= f.text_field :marca %>
+  </div>
+  <div class="field">
+    <%= f.label :modelo%><br />
+    <%= f.text_field :modelo %>
+  </div>
+  <div class="field">
+    <%= f.label "Estado"%><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :data_de_compra%><br />
+    <%= f.date_select :data_de_compra, :order => [:day, :month, :year] %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Salvar" , :class => "btn btn-small dark-blue"%>
+  </div>
+<% end %>

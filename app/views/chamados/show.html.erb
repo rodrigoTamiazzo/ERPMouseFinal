@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Estado:</b>
+  <%= @chamado.status %>
+</p>
+
+<p>
+  <b>Descrição:</b>
+  <%= @chamado.descricao %>
+</p>
+
+<p>
+  <b>Prioridade:</b>
+  <%= @chamado.prioridade %>
+</p>
+
+<p>
+  <b>Atendente:</b>
+  <%= @chamado.atendente %>
+</p>
+
+<p>
+  <b>Data abertura:</b>
+  <%= @chamado.data_abertura %>
+</p>
+
+<p>
+  <b>Data fechamento:</b>
+  <%= @chamado.data_fechamento %>
+</p>
+
+
+<%= link_to 'Editar', edit_chamado_path(@chamado), :class => "btn btn-small dark-blue"%> 
+<%= link_to 'Voltar', chamados_path, :class => "btn btn-small dark-blue"%>

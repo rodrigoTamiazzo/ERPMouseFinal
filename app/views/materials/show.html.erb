@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @material.tipo %>
+</p>
+
+<p>
+  <b>Custo:</b>
+  <%= @material.custo %>
+</p>
+
+<p>
+  <b>Data requisicao:</b>
+  <%= @material.data_requisicao.to_formatted_s(:d_m_y) %>
+</p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @material.descricao %>
+</p>
+
+<p>
+  <b>Quantidade:</b>
+  <%= @material.quantidade %>
+</p>
+
+
+<%= link_to 'Editar', edit_material_path(@material), :class => "btn btn-small dark-blue" %> |
+<%= link_to 'Voltar', materials_path, :class => "btn btn-small dark-blue" %>

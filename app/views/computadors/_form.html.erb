@@ -1,0 +1,49 @@
+<%= form_for(@computador) do |f| %>
+  <% if @computador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@computador.errors.count, "error") %> prohibited this computador from being saved:</h2>
+
+      <ul>
+      <% @computador.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :host_name %><br />
+    <%= f.text_field :host_name %>
+  </div>
+  <div class="field">
+    <%= f.label "Número Serial" %><br />
+    <%= f.text_field :numero_serial %>
+  </div>
+  <div class="field"  style="width:200px" > 
+    <%= f.label "Memória" %><br />
+    <%= f.select(:memoria,[['1 GB',1],['2 GB',2],['3 GB',3],['4 GB',4],['6 GB',6],['8 GB',8]], {}, :class => "chzn-select") %>
+  </div>
+  <div class="field">
+    <%= f.label :cpu %><br />
+    <%= f.text_field :cpu %>
+  </div>
+  <div class="field">
+    <%= f.label :hd %><br />
+    <%= f.text_field :hd %>
+  </div>
+   <div class="field"  style="width:200px" > 
+    <%= f.label "Garantia" %><br />
+    <%= f.select(:garantia,[['1 ano',1],['2 anos',2],['3 anos',3],['4 anos',4],['5 anos',5]], {}, :class => "chzn-select") %>
+  </div>
+  <div class="field">
+    <%= f.label "Estado" %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :data_de_compra %><br />
+    <%= f.date_select :data_de_compra,:order => [:day, :month, :year] %>
+  </div>
+   <div class="actions">
+    <%= f.submit "Salvar", :class => "btn btn-small dark-blue" %>
+  </div>
+<% end %>

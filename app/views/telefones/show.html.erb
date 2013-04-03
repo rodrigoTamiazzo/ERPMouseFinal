@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Serial number:</b>
+  <%= @telefone.numero_serial %>
+</p>
+
+<p>
+  <b>Garantia:</b>
+  <%= @telefone.garantia %>
+</p>
+<p>
+  <b>Marca:</b>
+  <%= @telefone.marca %>
+</p>
+<p>
+  <b>Modelo:</b>
+  <%= @telefone.modelo %>
+</p>
+<p>
+  <b>Estado:</b>
+  <%= @telefone.status %>
+</p>
+<p>
+  <b>Data de Compra:</b>
+  <%= @telefone.data_de_compra.to_formatted_s(:d_m_y) %>
+</p>
+
+
+<%= link_to 'Editar', edit_telefone_path(@telefone), :class => "btn btn-small dark-blue" %>
+<%= link_to 'Voltar', telefones_path, :class => "btn btn-small dark-blue" %>
+<%= link_to 'Imprimir', telefones_path, :class => "btn btn-small dark-blue" %>

@@ -1,0 +1,35 @@
+<h1>Listar Outros Ativos</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>Descrição</th>
+    <th>Garantia</th>
+    <th>Estado</th>
+    <th>Data de Compra</th> 
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+<tbody> 
+<% @ativo_outros.each do |ativo_outro| %>
+  <tr>
+    <td><%= ativo_outro.nome %></td>
+    <td><%= ativo_outro.descricao %></td>
+    <td><%= ativo_outro.garantia %></td>
+    <td><%= ativo_outro.status %></td>
+    <td><%= ativo_outro.data_de_compra.to_formatted_s(:d_m_y)%></td>
+    <td><%= link_to 'Visualizar', ativo_outro, :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Editar', edit_ativo_outro_path(ativo_outro), :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Excluir', ativo_outro, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Gerar Etiqueta', "/ativo_outros/etiqueta/#{ativo_outro.id}", :class => "btn btn-small dark-blue" %></td>
+  </tr>
+<% end %>
+<tbody>
+</table>
+
+<br />
+
+<%= link_to 'Novo Ativo', new_ativo_outro_path, :class => "btn btn-small dark-blue" %>

@@ -1,0 +1,2 @@
+module AtivoOutrosHelper
+end

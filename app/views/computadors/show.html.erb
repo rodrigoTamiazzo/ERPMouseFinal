@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Host name:</b>
+  <%= @computador.host_name %>
+</p>
+
+<p>
+  <b>Número Serial:</b>
+  <%= @computador.numero_serial %>
+</p>
+
+<p>
+  <b>Memória:</b>
+  <%= @computador.memoria %>
+</p>
+
+<p>
+  <b>Cpu:</b>
+  <%= @computador.cpu %>
+</p>
+
+<p>
+  <b>Hd:</b>
+  <%= @computador.hd %>
+</p>
+
+<p>
+  <b>Garantia:</b>
+  <%= @computador.garantia %>
+</p>
+<p>
+  <b>Data de Compra:</b>
+  <%= @computador.data_de_compra.to_formatted_s(:d_m_y)%>
+</p>
+
+<%= link_to 'Editar', edit_computador_path(@computador), :class => "btn btn-small dark-blue" %>
+<%= link_to 'Voltar', computadors_path, :class => "btn btn-small dark-blue" %>
+<%= link_to_function 'Imprimir', "window.print()", :class => "btn btn-small dark-blue" %>
+<%= link_to "PDF", computador_path(@computador.id, :format => "pdf") , :class => "btn btn-small dark-blue"%>
+

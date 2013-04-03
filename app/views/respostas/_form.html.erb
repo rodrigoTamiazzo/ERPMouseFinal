@@ -1,0 +1,36 @@
+<%= form_for(@resposta) do |f| %>
+  <% if @resposta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@resposta.errors.count, "error") %> prohibited this resposta from being saved:</h2>
+
+      <ul>
+      <% @resposta.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Responsável" %><br />
+    <%= f.text_field :responsavel %>
+  </div>
+  <div class="field">
+    <%= f.label "Descrição" %><br />
+    <%= f.text_area :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label "Data de Criação" %><br />
+    <%= f.datetime_select :datacriacao %>
+  </div>
+  <div class="field">
+    <%= f.label "Data de Finalização" %><br />
+    <%= f.datetime_select :datafinalizacao %>
+  </div>
+  <%= f.hidden_field :chamado_id , :value => @resposta.chamado.id %>"
+  <p>
+
+  <div class="actions">
+    <%= f.submit "Salvar Resposta", :class => "btn btn-small dark-blue" %>
+  </div>
+<% end %>

@@ -1,0 +1,45 @@
+<h1>Lista de Computadores</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Computadores</th>
+    <th>Número Serial</th>
+    <th>Memória</th>
+    <th>CPU</th>
+    <th>HD</th>
+    <th>Estado</th>
+    <th>Garantia</th>
+    <th>Data de Compra</th>
+    <th>Ações</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @computadors.each do |computador| %>
+  <tr>
+    <td><%= computador.host_name %></td>
+    <td><%= computador.numero_serial %></td>
+    <td><%= computador.memoria %></td>
+    <td><%= computador.cpu %></td>
+    <td><%= computador.hd %></td>
+    <td><%= computador.status %></td>
+    <td><%= computador.garantia %></td>
+    <td><%= computador.data_de_compra.to_formatted_s(:d_m_y) %></td>
+    <td><%= link_to 'Visualizar', computador , :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Editar', edit_computador_path(computador) , :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Excluir', computador, :method => :delete, :data => { :confirm => 'Tem certeza que deseja excluir?' }, :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Gerar Etiqueta', "computadors/etiqueta/#{computador.id}" , :class => "btn btn-small dark-blue" %></td>
+  </tr>
+  <% end %>
+  <tr>
+    
+  </tbody>
+</table>  
+<br />
+
+<%= link_to 'Novo Computador', new_computador_path , :class => "btn btn-small dark-blue" %>
+
+<%= link_to 'Relatório', {:controller => "computadors", :action => "relatorio"}  , :class => "btn btn-small dark-blue"%>

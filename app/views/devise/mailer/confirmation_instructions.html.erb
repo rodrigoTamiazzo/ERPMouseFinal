@@ -1,0 +1,5 @@
+<p>Bem-vindo <%= @email %>!</p>
+
+<p>Você pode confirmar suar conta de e-mail atraves do link a baixo:</p>
+
+<p><%= link_to 'Confirmar Conta de Acesso', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>

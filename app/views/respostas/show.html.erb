@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Responsável:</b>
+  <%= @resposta.responsavel %>
+</p>
+
+<p>
+  <b>Descrição:</b>
+  <%= @resposta.descricao %>
+</p>
+
+<p>
+ <b>Data de criação:</b>
+  <%= @resposta.datacriacao %>
+</p>
+
+<p>
+  <b>Data de Finalização:</b>
+  <%= @resposta.datafinalizacao %>
+</p>
+
+<p>
+  <b>Chamado:</b>
+  <%= @resposta.chamado.status %>
+</p>
+
+
+<%= link_to 'Editar', edit_resposta_path(@resposta), :class => "btn btn-small dark-blue" %> |
+<%= link_to 'Voltar', respostas_path, :class => "btn btn-small dark-blue" %>

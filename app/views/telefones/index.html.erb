@@ -1,0 +1,38 @@
+<h1>Lista de Telefones</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Número Serial</th>
+    <th>Modelo</th>
+    <th>Marca</th>
+    <th>Garantia</th>
+    <th>Estado</th>
+    <th>Data de Compra</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ </thead>
+<tbody>
+<% @telefones.each do |telefone| %>
+  <tr>
+    <td><%= telefone.numero_serial %></td>
+    <td><%= telefone.modelo %></td>
+    <td><%= telefone.marca %></td>
+    <td><%= telefone.garantia %></td>
+    <td><%= telefone.status %></td>
+    <td><%= telefone.data_de_compra.to_formatted_s(:d_m_y) %></td>
+    <td><%= link_to 'Visualizar', telefone, :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Editar', edit_telefone_path(telefone), :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Excluir', telefone, :method => :delete, :data => { :confirm => 'Tem certeza que deseja excluir?' }, :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Gerar Etiqueta', "/telefones/etiqueta/#{telefone.id}", :class => "btn btn-small dark-blue" %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'Novo Telefone', new_telefone_path, :class => "btn btn-small dark-blue" %>
+<%= link_to 'Relatório', {:controller => "telefones", :action => "relatorio"}, :class => "btn btn-small dark-blue"  %>

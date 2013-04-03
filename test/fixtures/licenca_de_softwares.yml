@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  numero_da_licenca: MyString
+  produto: MyString
+  quantidade: 1
+  data_de_expiracao: 2013-03-06 11:51:45
+  valor_de_compra: MyString
+
+two:
+  numero_da_licenca: MyString
+  produto: MyString
+  quantidade: 1
+  data_de_expiracao: 2013-03-06 11:51:45
+  valor_de_compra: MyString

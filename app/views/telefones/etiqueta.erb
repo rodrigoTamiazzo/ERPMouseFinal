@@ -1,0 +1,6 @@
+<h2>Etiqueta de Pratimônio</h2>
+<h4>Tipo do Ativo: Telefone</h4>
+<h4> Código de Pratimônio = <%= @telefone.id.to_s+ "/Telefone/" + @telefone.numero_serial.to_s %></h4>
+<h4> Data de Aquisição = <%= @telefone.data_de_compra.to_formatted_s(:d_m_y) %></h4>
+<%= link_to_function 'Imprimir', "window.print()", :class => "btn btn-small dark-blue" %>
+<%= link_to 'Voltar', computadors_path, :class => "btn btn-small dark-blue" %>

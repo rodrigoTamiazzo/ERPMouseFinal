@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Número da Licença:</b>
+  <%= @licenca_de_software.numero_da_licenca %>
+</p>
+
+<p>
+  <b>Produto:</b>
+  <%= @licenca_de_software.produto %>
+</p>
+
+<p>
+  <b>Quantidade:</b>
+  <%= @licenca_de_software.quantidade %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @licenca_de_software.status %>
+</p>
+
+<p>
+  <b>Data de Expiração:</b>
+  <%= @licenca_de_software.data_de_expiracao %>
+</p>
+
+<p>
+  <b>Valor de Compra:</b>
+  <%= @licenca_de_software.valor_de_compra %>
+</p>
+<p>
+  <b>Data de Compra:</b>
+  <%= @licenca_de_software.data_de_compra %>
+</p>
+
+<%= link_to 'Editar', edit_licenca_de_software_path(@licenca_de_software), :class => "btn btn-small dark-blue" %> 
+<%= link_to 'Voltar', licenca_de_softwares_path, :class => "btn btn-small dark-blue" %>

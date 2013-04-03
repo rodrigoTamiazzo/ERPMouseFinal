@@ -1,0 +1,41 @@
+<h1>Lista de Chamados</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Estado</th>
+    <th>Descrição</th>
+    <th>Prioridade</th>
+    <th>Atendente</th>
+    <th>Data abertura</th>
+    <th>Data fechamento</th>
+    <th>Ações</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+<tbody>
+  <% @chamados.each do |chamado| %>
+    <tr>
+      <td><%= chamado.status %></td>
+      <td><%= chamado.descricao %></td>
+      <td><%= chamado.prioridade %></td>
+      <td><%= chamado.atendente %></td>
+      <td><%= chamado.data_abertura %></td>
+      <td><%= chamado.data_fechamento %></td> 
+      <td><%= link_to 'Visualizar', chamado , :class => "btn btn-small dark-blue"%></td>
+      <td><%= link_to 'Editar', edit_chamado_path(chamado), :class => "btn btn-small dark-blue" %></td>
+      <td><%= button_to 'Excluir', chamado, :method => :delete, :data => { :confirm => 'Você tem certeza?' }, :class => "btn btn-small dark-blue" %></td>
+    </tr>
+  <% end %>
+  <% if @chamados.size == 0 %>
+    <em> Nenhum chamado cadastrado no momento</em>
+  <% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'Novo chamado', new_chamado_path, :class => "btn btn-small dark-blue" %>
+<%= link_to 'relatório', 'chamados/relatorio', :class => "btn btn-small dark-blue" %>

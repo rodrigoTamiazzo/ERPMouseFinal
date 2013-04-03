@@ -1,0 +1,31 @@
+<h1>Lista de Respostas</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Responsável</th>
+    <th>Descrição</th>
+    <th>Datacriação</th>
+    <th>Data Finalização</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+<tbody>
+<% @respostas.each do |resposta| %>
+  <tr>
+    <td><%= resposta.responsavel %></td>
+    <td><%= resposta.descricao %></td>
+    <td><%= resposta.datacriacao %></td>
+    <td><%= resposta.datafinalizacao %></td>
+    <td><%= link_to 'Visualizar', resposta, :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Editar', edit_resposta_path(resposta), :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Excluir', resposta, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, :class => "btn btn-small dark-blue" %></td>
+  </tr>
+<% end %>
+<tbody>
+</table>
+<br />
+
+<%= link_to 'Nova Resposta', new_resposta_path, :class => "btn btn-small dark-blue" %>

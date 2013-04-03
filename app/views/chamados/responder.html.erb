@@ -1,0 +1,36 @@
+<h1>Lista de Chamados para Resposta</h1>
+<table class="table table-striped">
+ <thead>
+  <tr>
+    <th>Estado</th>
+    <th>Descrição</th>
+    <th>Prioridade</th>
+    <th>Atendente</th>
+    <th>Data abertura</th>
+    <th>Data fechamento</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ </thead>
+<tbody>
+<% @chamados.each do |chamado| %>
+  <tr>
+    <td><%= chamado.status %></td>
+    <td><%= chamado.descricao %></td>
+    <td><%= chamado.prioridade %></td>
+    <td><%= chamado.atendente %></td>
+    <td><%= chamado.data_abertura %></td>
+    <td><%= chamado.data_fechamento %></td>
+    
+    <td> <a href="/respostas/new/<%= chamado.id %>" class = "btn btn-small dark-blue" > Responder</a> </td>
+    <td> <a href="/chamados/lista_respostas_chamado/<%= chamado.id %>" class = "btn btn-small dark-blue" > Listar Respostas</a> </td>
+  </tr>
+<% end %>
+<% if @chamados.size == 0 %>
+<em>Nenhum chamado cadastrado no momento</em>
+<% end %>
+</tbody>
+</table>
+
+<br />

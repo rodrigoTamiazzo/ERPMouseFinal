@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @ativo_outro.nome %>
+</p>
+
+<p>
+  <b>Descrição:</b>
+  <%= @ativo_outro.descricao %>
+</p>
+
+<p>
+  <b>Garantia:</b>
+  <%= @ativo_outro.garantia %>
+</p>
+<p>
+  <b>Estado:</b>
+  <%= @ativo_outro.status %>
+</p>
+<p>
+  <b>Data de compra:</b>
+  <%= @ativo_outro.data_de_compra.to_formatted_s(:d_m_y) %>
+</p>
+
+<%= link_to 'Editar', edit_ativo_outro_path(@ativo_outro), :class => "btn btn-small dark-blue" %> 
+<%= link_to 'Voltar', ativo_outros_path, :class => "btn btn-small dark-blue" %>
