@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :garantia %><br />
-    <%= f.text_field :garantia %>
+    <%= f.select(:garantia,[['1 ano',1],['2 anos',2],['3 anos',3],['4 anos',4],['5 anos',5]], {}, :class => "chzn-select") %>
   </div>
   <div class="field">
     <%= f.label :marca%><br />
@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label "Estado"%><br />
-    <%= f.text_field :status %>
+    <%= f.select(:status,[["Em estoque",1],["Em uso",2],["Em manutenção",3]], {}, :class => "chzn-select") %>
   </div>
   <div class="field">
     <%= f.label :data_de_compra%><br />

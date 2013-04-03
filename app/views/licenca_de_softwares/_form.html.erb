@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label "Estado" %><br />
-    <%= f.text_field :status %>
+    <%= f.select(:status,[["Em estoque",1],["Em uso",2],["Em manutenção",3]], {}, :class => "chzn-select") %>
   </div>
   <div class="field">
     <%= f.label "Data de Compra" %><br />
