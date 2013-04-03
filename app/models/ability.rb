@@ -28,8 +28,7 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
-    can :manage, :all if user.is? :admin
-    can :read, Chamado if user.is? :suporte
 
+    can :manage, :all if user.is? :admin
   end
 end

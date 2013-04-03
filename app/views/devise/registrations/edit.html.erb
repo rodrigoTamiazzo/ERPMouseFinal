@@ -19,11 +19,12 @@
   <div><%= f.label "Senha Atual" %> <i>(A sua senha atual é necesária para confirmar as alterações)</i><br />
   <%= f.password_field :current_password %></div>
 
-  <% for role in Usuario::ROLES %>
-  <%= check_box_tag "usuario[roles][#{role}]", role, @usuario.roles.include?(role), {:name => "usuario[roles][]"}%>
-  <%= label_tag "usuario_roles_#{role}", role.humanize %><br />
+  <% for role in User::ROLES %>
+  <%= check_box_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]"}%>
+  <%= label_tag "user_roles_#{role}", role.humanize %><br />
   <% end %>
-  <%= hidden_field_tag "usuario[roles][]", "" %>
+  <%= hidden_field_tag "user[roles][]", "" %>
+
 
   <div><%= f.submit "Salvar" %></div>
 <% end %>

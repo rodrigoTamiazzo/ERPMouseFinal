@@ -1,5 +1,5 @@
 ERPMouse::Application.routes.draw do
-  devise_for :usuarios
+  devise_for :users
 
   resources :materials
 

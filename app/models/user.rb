@@ -1,4 +1,4 @@
-class Usuario < ActiveRecord::Base
+class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -9,10 +9,10 @@ class Usuario < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :roles
   # attr_accessible :title, :body
 
-  ROLES = %w[admin suporte producao ger.ativos banido]
+  ROLES = %w[admin suporte]
 
-  def roles=(roles)
-  	self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
+  	def roles=(roles)
+  		self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
 	end
 
 	def roles
@@ -20,8 +20,7 @@ class Usuario < ActiveRecord::Base
     		((roles_mask || 0) & 2**ROLES.index(r)).zero?
   		end
 	end
-
-  def is?(role)
-    roles.include?(role.to_s)
-  end
+	def is?(role)
+  		roles.include?(role.to_s)
+	end
 end
