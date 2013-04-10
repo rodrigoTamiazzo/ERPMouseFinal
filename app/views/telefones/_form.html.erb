@@ -1,12 +1,7 @@
 <%= form_for(@telefone) do |f| %>
   <% if @telefone.errors.any? %>
     <div id="error_explanation">
-<<<<<<< HEAD
       <h2><%= pluralize(@telefone.errors.count, "erro") %> - Não foi possível salvar esse telefone:</h2>
-=======
-      <h2><%= pluralize(@telefone.errors.count, "error") %> prohibited this telefone from being saved:</h2>
->>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
-
       <ul>
       <% @telefone.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -21,11 +16,7 @@
   </div>
   <div class="field">
     <%= f.label :garantia %><br />
-<<<<<<< HEAD
     <%= f.select(:garantia,[['1 ano',1],['2 anos',2],['3 anos',3],['4 anos',4],['5 anos',5]], {}, :class => "chzn-select") %>
-=======
-    <%= f.select(:garantia,[['1 ano'],['2 anos'],['3 anos'],['4 anos'],['5 anos']], {}, :class => "chzn-select") %>
->>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
   </div>
   <div class="field">
     <%= f.label :marca%><br />
@@ -37,11 +28,7 @@
   </div>
   <div class="field">
     <%= f.label "Estado"%><br />
-<<<<<<< HEAD
-    <%= f.select(:status,[["Em estoque",1],["Em uso",2],["Em manutenção",3]], {}, :class => "chzn-select") %>
-=======
     <%= f.select(:status,[["Em estoque"],["Em uso"],["Em manutenção"]], {}, :class => "chzn-select") %>
->>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
   </div>
   <div class="field">
     <%= f.label :data_de_compra%><br />

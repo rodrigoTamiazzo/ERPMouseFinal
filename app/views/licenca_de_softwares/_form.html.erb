@@ -1,12 +1,8 @@
 <%= form_for(@licenca_de_software) do |f| %>
   <% if @licenca_de_software.errors.any? %>
     <div id="error_explanation">
-<<<<<<< HEAD
-      <h2><%= pluralize(@licenca_de_software.errors.count, "erro") %> - Não foi possível salvar essa Licença:</h2>
-=======
-      <h2><%= pluralize(@licenca_de_software.errors.count, "error") %> prohibited this licenca_de_software from being saved:</h2>
->>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
 
+      <h2><%= pluralize(@licenca_de_software.errors.count, "erro") %> - Não foi possível salvar essa Licença:</h2>
       <ul>
       <% @licenca_de_software.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -37,11 +33,7 @@
   </div>
   <div class="field">
     <%= f.label "Estado" %><br />
-<<<<<<< HEAD
     <%= f.select(:status,[["Em estoque",1],["Em uso",2],["Em manutenção",3]], {}, :class => "chzn-select") %>
-=======
-    <%= f.text_field :status %>
->>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
   </div>
   <div class="field">
     <%= f.label "Data de Compra" %><br />

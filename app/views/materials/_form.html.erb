@@ -1,11 +1,8 @@
 <%= form_for(@material) do |f| %>
   <% if @material.errors.any? %>
     <div id="error_explanation">
-<<<<<<< HEAD
+
       <h2><%= pluralize(@material.errors.count, "erro") %> - Não foi possível salvar essa requisição:</h2>
-=======
-      <h2><%= pluralize(@material.errors.count, "error") %> prohibited this material from being saved:</h2>
->>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
 
       <ul>
       <% @material.errors.full_messages.each do |msg| %>
@@ -17,11 +14,9 @@
 
   <div class="field">
     <%= f.label :tipo %><br />
-<<<<<<< HEAD
-    <%= f.text_field :tipo %>
-=======
-    <%= f.select(:memoria,[['Computador'],['Telefone'],['Licença de Software'],['Outros']], {}, :class => "chzn-select") %>
->>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
+
+    <%= f.select(:tipo,[['Computador'],['Telefone'],['Licença de Software'],['Outros']], {}, :class => "chzn-select") %>
+
   </div>
   <div class="field">
     <%= f.label :custo %><br />

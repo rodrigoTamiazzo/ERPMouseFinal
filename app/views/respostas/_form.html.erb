@@ -1,12 +1,7 @@
 <%= form_for(@resposta) do |f| %>
   <% if @resposta.errors.any? %>
     <div id="error_explanation">
-<<<<<<< HEAD
       <h2><%= pluralize(@resposta.errors.count, "erro") %> - Não foi possível salvar essa resposta:</h2>
-=======
-      <h2><%= pluralize(@resposta.errors.count, "error") %> prohibited this resposta from being saved:</h2>
->>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
-
       <ul>
       <% @resposta.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>

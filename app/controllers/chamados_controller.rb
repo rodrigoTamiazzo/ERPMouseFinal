@@ -99,17 +99,17 @@ class ChamadosController < ApplicationController
   # GET /relatorio
   # GET /realtorio.json
   def relatorio
-<<<<<<< HEAD
+
     # chamados = Chamado.all
     # chamados2 = Chamado.where([:prioridade = ?, "alta"])
     # chamados2.each do
     # @url = "http://chart.apis.google.com/chart?cht=bvgc&chs=300x200&chd=t:#{stringy}&chxt=x,y&chxl=0:#{stringx}"
-=======
+
     chamados = Chamado.all
     chamados2 = Chamado.where([:prioridade = ?, "alta"])
     chamados2.each do
     @url = "http://chart.apis.google.com/chart?cht=bvgc&chs=300x200&chd=t:#{stringy}&chxt=x,y&chxl=0:#{stringx}"
->>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
+
     
   end
 end
