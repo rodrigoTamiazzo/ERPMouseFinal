@@ -1,7 +1,11 @@
 <%= form_for(@chamado) do |f| %>
   <% if @chamado.errors.any? %>
     <div id="error_explanation">
+<<<<<<< HEAD
       <h2><%= pluralize(@chamado.errors.count, "erro") %> - Não foi possível salvar esse chamado:</h2>
+=======
+      <h2><%= pluralize(@chamado.errors.count, "error") %> prohibited this chamado from being saved:</h2>
+>>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
 
       <ul>
       <% @chamado.errors.full_messages.each do |msg| %>

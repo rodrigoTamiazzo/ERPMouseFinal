@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 #encoding: utf-8 
+=======
+>>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
 class MaterialsController < ApplicationController
   load_and_authorize_resource
   

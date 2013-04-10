@@ -30,7 +30,13 @@
   <%= render "partials/app_ui/breadcrumbs" %>
   <div class="container-fluid">
     <!-- Add notice e alert for the Divse -->
+<<<<<<< HEAD
     <p id="alert"> <%= alert %></p>
+=======
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  
+>>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
     <%= yield %>
   </div>
   <%= render "partials/app_ui/footer" %>
@@ -38,7 +44,11 @@
 
 
 <!-- Modal dialog used for the image gallery -->
+<<<<<<< HEAD
 <!-- <div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1">
+=======
+<div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1">
+>>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
   <div class="modal-header">
     <a class="close" data-dismiss="modal">&times;</a>
     <h3 class="modal-title"></h3>
@@ -50,7 +60,11 @@
     <a class="btn modal-prev medium-blue"><i class="icon-arrow-left icon-white"></i> Previous</a>
     <a class="btn modal-next medium-blue">Next <i class="icon-arrow-right icon-white"></i></a>
   </div>
+<<<<<<< HEAD
 </div> -->
+=======
+</div>
+>>>>>>> 8e2910df577a1dcbbd3c7b951809aa9e9004efb8
 
 </body>
 </html>
