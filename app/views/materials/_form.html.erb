@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :tipo %><br />
-    <%= f.text_field :tipo %>
+    <%= f.select(:memoria,[['Computador'],['Telefone'],['Licença de Software'],['Outros']], {}, :class => "chzn-select") %>
   </div>
   <div class="field">
     <%= f.label :custo %><br />
