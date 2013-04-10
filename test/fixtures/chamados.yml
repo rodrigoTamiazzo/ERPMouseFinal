@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  status: MyString
+  descricao: MyString
+  prioridade: MyString
+  atendente: MyString
+  data_abertura: 
+  data_fechamento: 
+
+two:
+  status: MyString
+  descricao: MyString
+  prioridade: MyString
+  atendente: MyString
+  data_abertura: 
+  data_fechamento: 

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tipo: MyString
+  custo: MyString
+  data_requisicao: 2013-03-13 15:06:17
+  descricao: MyString
+  quantidade: MyString
+
+two:
+  tipo: MyString
+  custo: MyString
+  data_requisicao: 2013-03-13 15:06:17
+  descricao: MyString
+  quantidade: MyString

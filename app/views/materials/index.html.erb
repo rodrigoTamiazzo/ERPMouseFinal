@@ -1,0 +1,34 @@
+<h1>Lista de Materiais</h1>
+
+<table class"table table-striped">
+ <thead>
+  <tr>
+    <th>Tipo</th>
+    <th>Custo</th>
+    <th>Data requisicao</th>
+    <th>Descricao</th>
+    <th>Quantidade</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ </thead>
+<tbody>
+<% @materials.each do |material| %>
+  <tr>
+    <td><%= material.tipo %></td>
+    <td><%= material.custo %></td>
+    <td><%= material.data_requisicao.to_formatted_s(:d_m_y) %></td>
+    <td><%= material.descricao %></td>
+    <td><%= material.quantidade %></td>
+    <td><%= link_to 'Visualizar', material, :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Editar', edit_material_path(material), :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Excluir', material, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, :class => "btn btn-small dark-blue" %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'Requisitar novo Material', new_material_path, :class => "btn btn-small dark-blue" %>

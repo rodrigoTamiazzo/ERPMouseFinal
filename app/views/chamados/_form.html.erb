@@ -1,0 +1,42 @@
+<%= form_for(@chamado) do |f| %>
+  <% if @chamado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chamado.errors.count, "erro") %> - Não foi possível salvar esse chamado:</h2>
+
+      <ul>
+      <% @chamado.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field"  style="width:200px" > 
+    <%= f.label "Estado" %><br />
+    <%= f.select(:status,['Iniciado','Aguardando Resposta','Em Atedimento', 'Resolvido'], {}, :class => "chzn-select") %>
+  </div>
+  <div class="field">
+    <%= f.label "Descrição" %><br />
+    <%= f.text_area :descricao, :style => "width:400px ; resize: none" %>
+  </div>
+  
+  <div class="field"  style="width:200px" > 
+    <%= f.label "Prioriade" %><br />
+    <%= f.select(:prioridade,['Baixa','Média','Alta'], {}, :class => "chzn-select") %>
+  </div>
+  <div class="field">
+    <%= f.label :atendente %><br />
+    <%= f.text_field :atendente %>
+  </div>
+  <div class="field">
+    <%= f.label :data_abertura %><br />
+    <%= f.datetime_select :data_abertura %>
+  </div>
+  <div class="field">
+    <%= f.label :data_fechamento %><br />
+    <%= f.datetime_select :data_fechamento %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Salvar", :class => "btn btn-small dark-blue" %>
+  </div>
+<% end %>

@@ -1,0 +1,45 @@
+<%= form_for(@licenca_de_software) do |f| %>
+  <% if @licenca_de_software.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@licenca_de_software.errors.count, "erro") %> - Não foi possível salvar essa Licença:</h2>
+
+      <ul>
+      <% @licenca_de_software.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Número de Licença" %><br />
+    <%= f.text_field :numero_da_licenca %>
+  </div>
+  <div class="field">
+    <%= f.label :produto %><br />
+    <%= f.text_field :produto %>
+  </div>
+  <div class="field">
+    <%= f.label :quantidade %><br />
+    <%= f.number_field :quantidade %>
+  </div>
+  <div class="field">
+    <%= f.label "Data de Expiração" %><br />
+    <%= f.date_select :data_de_expiracao, :order => [:day, :month, :year]%>
+  </div>
+  <div class="field">
+    <%= f.label "Valor de Compra" %><br />
+    <%= f.text_field :valor_de_compra %>
+  </div>
+  <div class="field">
+    <%= f.label "Estado" %><br />
+    <%= f.select(:status,[["Em estoque",1],["Em uso",2],["Em manutenção",3]], {}, :class => "chzn-select") %>
+  </div>
+  <div class="field">
+    <%= f.label "Data de Compra" %><br />
+    <%= f.date_select :data_de_compra, :order => [:day, :month, :year] %>
+  </div>
+  <div class="actions">
+    <%= f.submit"Salvar" ,:class => "btn btn-small dark-blue" %>
+  </div>
+<% end %>

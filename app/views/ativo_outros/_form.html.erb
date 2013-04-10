@@ -1,0 +1,37 @@
+<%= form_for(@ativo_outro) do |f| %>
+  <% if @ativo_outro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ativo_outro.errors.count, "erro") %> - Não foi possível salvar esse ativo:</h2>
+
+      <ul>
+      <% @ativo_outro.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label "Descrição" %><br />
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :garantia %><br />
+    <%= f.text_field :garantia %>
+  </div>
+  <div class="field">
+    <%= f.label "Estado" %><br />
+    <%= f.select(:status,[["Em estoque",1],["Em uso",2],["Em manutenção",3]], {}, :class => "chzn-select") %>
+  </div>
+  <div class="field">
+    <%= f.label "Data de compra" %><br />
+    <%= f.date_select :data_de_compra, :order => [:day, :month, :year]%>
+  </div>
+  <div class="actions">
+    <%= f.submit "Salvar", :class => "btn btn-small dark-blue" %>
+  </div>
+<% end %>

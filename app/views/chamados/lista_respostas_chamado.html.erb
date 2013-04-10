@@ -1,0 +1,27 @@
+<h2> Chamado </h2>
+<h3>Lista de Respostas</h3>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Responsável</th>
+    <th>Descrição</th>
+    <th>Data Criação</th>
+    <th>Data Finalização</th>
+  </tr>
+</thead>
+
+<tbody>
+<% @chamado.respostas.each do |resposta| %>
+  <tr>
+    <td><%= resposta.responsavel %></td>
+    <td><%= resposta.descricao %></td>
+    <td><%= resposta.datacriacao %></td>
+    <td><%= resposta.datafinalizacao %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<br />

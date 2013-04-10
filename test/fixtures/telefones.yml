@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  serial_number: MyString
+  garantia: MyString
+  ramal_associado: MyString
+
+two:
+  serial_number: MyString
+  garantia: MyString
+  ramal_associado: MyString
