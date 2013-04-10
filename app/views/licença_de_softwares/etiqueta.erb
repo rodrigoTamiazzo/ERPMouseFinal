@@ -1,7 +1,0 @@
-<h2>Etiqueta de Patrimônio</h2>
-<h4>Tipo do Ativo: Licença_de_Software</h4>
-<h4> Código de Patrimônio = <%= @licenca_de_software.id.to_s+ '/ Software /' + @licenca_de_software.produto.to_s %></h4>
-<h4> Data de Aquisição = <%= @licenca_de_software.data_de_compra.to_formatted_s(:d_m_y) %></h4>
-<h4> Data de Expiração = <%= @licenca_de_software.data_de_expiracao.to_formatted_s(:d_m_y) %></h4>
-<%= link_to_function 'Imprimir', "window.print()", :class => "btn btn-small dark-blue" %>
-<%= link_to 'Voltar', licenca_de_softwares_path, :class => "btn btn-small dark-blue" %>
