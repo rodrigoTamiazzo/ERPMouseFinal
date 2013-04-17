@@ -1,0 +1,21 @@
+<h2><%= @page_title = "Visualizar detalhes da requisicao" %></h2><hr />
+
+<% if notice %>
+  <div class="alert green fade in">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= notice %>
+  </div>
+<% end %>
+
+<%= form_for @material_prova, :html => {:class => "form-horizontal", :multipart => true} do |f| %>
+
+  <%= render(:partial => 'form', :locals => {:f => f, :readonly => true}) %>    
+  <div class="control-group">
+    <div class="controls">
+      <%= link_to 'Editar Banner', {:action => 'edit', :id => @material_prova.id}, :class => "btn btn-small dark-blue" %>
+  </div>
+<% end %>
+
+<br />
+<%= link_to 'Voltar para a lista de requisicoes', material_provas_path, :class => "btn btn-small light-blue inverse" %>&nbsp; &nbsp;&nbsp;
+<%= link_to 'Nova Requisicao', new_material_prova_path, :class => "btn btn-small light-blue inverse" %>

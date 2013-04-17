@@ -1,4 +1,7 @@
 ERPMouse::Application.routes.draw do
+  resources :material_provas
+
+
   devise_for :users
 
   resources :materials

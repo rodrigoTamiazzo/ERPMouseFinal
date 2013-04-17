@@ -1,0 +1,12 @@
+<h2><%= @page_title = "Alterar Requisicao" %></h2><hr />
+<%= form_for @material_prova, :validate => true, :html => {:class => "form-horizontal"} do |f| %>
+  
+  <%= render(:partial => 'form', :locals => {:f => f}) %>    
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit("Atualizar", :class => "btn btn-small dark-blue") %>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to 'Voltar', material_provas_path, :class => "btn btn-small light-blue inverse" %>

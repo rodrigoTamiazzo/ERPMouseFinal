@@ -1,0 +1,40 @@
+<div class="box bordered" style="position:relative;">
+  <div class="box-header" >
+    <%= @page_title = "Ligacoes pendentes" %>
+  </div>
+
+  <table class="table table-striped data-table">
+    <thead>
+      <tr>
+        <th>Acoes</th>
+        <th>Custo</th>
+        <th>Data</th>
+        <th>Quantidade</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% if @material_provas 
+        @material_provas.each do |material| %>
+        <tr>
+            <td class="td-actions">
+                <%= link_to '', {:action => 'show', :id => material.id}, :class => "icon-eye-open", :title => "Visualizar" %>&nbsp;
+                <%= link_to '', {:action => 'edit', :id => material.id}, :class => "icon-edit", :title => "Editar" %>&nbsp;
+                <%= link_to '', {:action => 'delete', :id => material.id}, :class => "icon-remove", :title => "Deletar" %>
+          </td>
+          <td><%= material.custo %></td>
+          <td><%= material.data %></td>
+          <td><%= material.quantidade %></td>
+          <td><%= material.tipo %></td>
+        </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br />
+
+
+<%= link_to 'Requisitar material', new_material_prova_path, :class => "btn btn-small light-blue inverse" %>

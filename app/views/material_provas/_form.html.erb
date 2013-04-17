@@ -1,0 +1,38 @@
+<% readonly ||= false %>
+<div class="control-group">
+    <%= f.label :reason, "Descricao", :class => "control-label strong" %>
+  <div class="controls">
+      <%= f.text_field :descricao, :placeholder => "Insira a descricao do motivo dessa requisicao", :readonly => readonly %>
+    </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :data, "Data", :class => "control-label strong" %>
+  <div class="controls">
+    <% disabled = 'disabled' if readonly %>
+    <%= f.date_select :data, :placeholder => "dd/MM/aaaa", :disabled => disabled%>
+  </div>
+</div>
+
+
+
+<div class="control-group">
+  <%= f.label :quantidade, "Quantidade", :class => "control-label strong" %>
+  <div class="controls">
+    <%= f.number_field :quantidade, :placeholder => "Quantidade", :readonly => readonly %>
+    </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :custo, "Custo", :class => "control-label strong" %>
+  <div class="controls">
+    <%= f.text_field :custo, :placeholder => "Custo", :readonly => readonly%>
+    </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :tipo, "Tipo", :class => "control-label strong" %>
+  <div class="controls">
+    <%= f.select :tipo ,[['Computador'],['Telefone'],['Licenca de Software'],['Outros']], {}, :class => "chzn-select", :style => "width:auto", :disabled => disabled %>
+    </div>
+</div>
