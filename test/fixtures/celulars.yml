@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  numeroSerial: MyString
+  garantia: MyString
+  modelo: MyString
+  estadoUso: MyString
+  dataCompra: 2013-04-17
+
+two:
+  numeroSerial: MyString
+  garantia: MyString
+  modelo: MyString
+  estadoUso: MyString
+  dataCompra: 2013-04-17

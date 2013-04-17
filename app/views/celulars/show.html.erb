@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Numero do Serial:</b>
+  <%= @celular.numeroSerial %>
+</p>
+
+<p>
+  <b>Garantia:</b>
+  <%= @celular.garantia %>
+</p>
+
+<p>
+  <b>Modelo:</b>
+  <%= @celular.modelo %>
+</p>
+
+<p>
+  <b>Estado de Uso:</b>
+  <%= @celular.estadoUso %>
+</p>
+
+<p>
+  <b>Data da compra:</b>
+  <%= @celular.dataCompra %>
+</p>
+
+
+<%= link_to 'Editar', edit_celular_path(@celular), :class => "btn btn-small dark-blue" %>
+<%= link_to 'Voltar', celulars_path, :class => "btn btn-small dark-blue" %>

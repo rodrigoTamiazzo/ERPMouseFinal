@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130403193427) do
+ActiveRecord::Schema.define(:version => 20130417185452) do
 
   create_table "ativo_outros", :force => true do |t|
     t.string   "nome"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(:version => 20130403193427) do
     t.integer  "usuarioativo_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "celulars", :force => true do |t|
+    t.string   "numeroSerial"
+    t.string   "garantia"
+    t.string   "modelo"
+    t.string   "estadoUso"
+    t.date     "dataCompra"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "chamados", :force => true do |t|

@@ -1,0 +1,34 @@
+<h1>Listing celulars</h1>
+
+<table class="table table-striped">
+  <thead>
+      <tr>
+        <th>Numero Serial</th>
+        <th>Garantia</th>
+        <th>Modelo</th>
+        <th>Estado de Uso</th>
+        <th>Data da compra</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </thead>
+<tbody>
+<% @celulars.each do |celular| %>
+  <tr>
+    <td><%= celular.numeroSerial %></td>
+    <td><%= celular.garantia %></td>
+    <td><%= celular.modelo %></td>
+    <td><%= celular.estadoUso %></td>
+    <td><%= celular.dataCompra %></td>
+    <td><%= link_to 'Visualizar', celular, :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Editar', edit_celular_path(celular), :class => "btn btn-small dark-blue" %></td>
+    <td><%= link_to 'Excluir', celular, :method => :delete, :data => { :confirm => 'Tem certeza que deseja excluir?' }, :class => "btn btn-small dark-blue" %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'Novo Telefone', new_celular_path, :class => "btn btn-small dark-blue" %>

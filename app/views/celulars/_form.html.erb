@@ -1,0 +1,37 @@
+<%= form_for(@celular) do |f| %>
+  <% if @celular.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@celular.errors.count, "error") %> Não foi possivel salvar esse celular:</h2>
+
+      <ul>
+      <% @celular.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Numero do Serial" %><br />
+    <%= f.text_field :numeroSerial, :placeholder => "digite o número serial" %>
+  </div>
+  <div class="field">
+    <%= f.label "Garantia" %><br />
+    <%= f.text_field :garantia, :placeholder => "insira o período da garantia" %>
+  </div>
+  <div class="field">
+    <%= f.label "Modelo" %><br />
+    <%= f.text_field :modelo %>
+  </div>
+  <div class="field">
+    <%= f.label "Estado de Uso" %><br />
+    <%= f.select(:estadoUso,[["Em estoque"],["Em uso"],["Em manutenção"]], {}, :class => "chzn-select") %>
+  </div>
+  <div class="field">
+    <%= f.label "Data da Compra" %><br />
+    <%= f.date_select :dataCompra, :order => [:day, :month, :year] %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Salvar" , :class => "btn btn-small dark-blue"%>
+  </div>
+<% end %>
