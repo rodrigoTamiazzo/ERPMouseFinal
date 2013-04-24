@@ -27,6 +27,8 @@ ERPMouse::Application.routes.draw do
      get :responder
      get :resposta
      get 'relatorio'
+     get 'relatorioMeses'
+     get 'relatorioPrioridade'
    end
   end
   
@@ -45,10 +47,13 @@ ERPMouse::Application.routes.draw do
   resources :computadors do
     collection do
       get 'relatorio'
+      get 'relatorioMemoria'
+      get 'relatorioProcessadores'
       get 'etiqueta'
     end
   end
 
+  match 'login/:username' => 'login#signin'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

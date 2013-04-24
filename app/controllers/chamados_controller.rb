@@ -1,3 +1,4 @@
+#encoding: utf-8 
 class ChamadosController < ApplicationController
   load_and_authorize_resource
   
@@ -96,20 +97,69 @@ class ChamadosController < ApplicationController
       format.json { head :no_content }
     end
   end
-  # GET /relatorio
-  # GET /realtorio.json
-  def relatorio
-
-    # chamados = Chamado.all
-    # chamados2 = Chamado.where([:prioridade = ?, "alta"])
-    # chamados2.each do
-    # @url = "http://chart.apis.google.com/chart?cht=bvgc&chs=300x200&chd=t:#{stringy}&chxt=x,y&chxl=0:#{stringx}"
-
+  
+  def relatorioMeses
+    @@relatorio = 'Relátorio de Chamados'
     chamados = Chamado.all
-    chamados2 = Chamado.where([:prioridade = ?, "alta"])
-    chamados2.each do
-    @url = "http://chart.apis.google.com/chart?cht=bvgc&chs=300x200&chd=t:#{stringy}&chxt=x,y&chxl=0:#{stringx}"
+    jan = 0
+    fev = 0
+    abril = 0
+    maio = 0
+    junho = 0
+    julho = 0
+    chamados.each do |chamado|
+      if chamado.data_de_abertura.to_date  1  
+        jan += 1 
+      elsif chamado.cpu.to_i == 2 
+        fev += 1  
+      elsif chamado.cpu.to_i == 3 
+        abril += 1
+      elsif chamado.cpu.to_i == 4 
+        maio += 1
+      elsif chamado.cpu.to_i == 6 
+        junho += 1
+      elsif chamado.cpu.to_i == 8 
+        julho += 1
+      end
+    end
+    jan = (jan * 100)/chamadoes.size
+    fev = (fev * 100)/chamadoes.size
+    abril = (abril * 100)/chamadoes.size
+    maio = (maio * 100)/chamadoes.size
+    junho = (junho * 100)/chamadoes.size
+    julho = (julho * 100)/chamadoes.size
+    @string1 = jan.to_s + ',0,' + fev.to_s + ',0,' + abril.to_s+ ',0,' + maio.to_s+ ',0,' + junho.to_s + ',0,' + julho.to_s
+    @string2 = "|Jan||Fev||Abril||Maio||Jun||Jul|"
+    @@url = "http://chart.apis.google.com/chart?cht=bvg&chs=300x200&chd=t:#{@string1}&chxt=x,y&chxl=0:#{@string2}1:|0|#{chamadoes.size.to_f/2}|#{chamadoes.size}"
+    redirect_to "/chamados/relatorio"
+  end
 
-    
+  def relatorioPrioridade
+    @@relatorio = 'Relátorio de Prioriade dos Chamados'
+    chamados = Chamado.all
+    baixa = 0
+    media = 0
+    alta = 0
+    chamados.each do |chamado|
+      if chamado.prioridade == "Baixa"  
+        baixa += 1 
+      elsif chamado.prioridade == "Média" 
+        media += 1  
+      elsif chamado.prioridade == "Alta" 
+        alta += 1
+      end
+    end
+    baixa = (baixa * 100)/chamados.size
+    media = (media * 100)/chamados.size
+    alta = (alta * 100)/chamados.size
+    @string1 = baixa.to_s + ',0,' + media.to_s + ',0,' + alta.to_s
+    @string2 = "|Baixa||Média||Alta|"
+    @@url = "http://chart.apis.google.com/chart?cht=bvg&chs=300x200&chd=t:#{@string1}&chxt=x,y&chxl=0:#{@string2}1:|0|#{chamados.size.to_f/2}|#{chamados.size}"
+    redirect_to "/chamados/relatorio"
+  end
+
+  def relatorio
+    @rel = @@relatorio
+    @url = @@url
   end
 end

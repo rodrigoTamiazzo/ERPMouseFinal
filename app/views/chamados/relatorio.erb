@@ -1,28 +1,20 @@
+<h1><%= @rel%> </h1>
 <img src= <%="#{@url}" %> alt="" />
 
+<%= link_to 'Voltar', chamados_path, :class => "btn btn-small dark-blue" %>
 
-  <!-- # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :roles
-  # attr_accessible :title, :body
+<!-- 
+Image:Chart6.png
 
-  ROLES = %w[admin suporte producao ger.ativos banido]
+The URL: http://chart.apis.google.com/chart?cht=p&chs=400x200&chd=t:65,20,15&chxt=x&chxl=0:|Search+Engines|Referring+Sites|Direct+Traffic
 
-  def roles=(roles)
-  	self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
-	end
+Here's an explanation of the pieces:
 
-	def roles
-  		ROLES.reject do |r|
-    		((roles_mask || 0) & 2**ROLES.index(r)).zero?
-  		end
-	end
+    cht=p declares the chart type
+    chs=400x200 sets the size of the chart to be 400 pixels wide and 200 pixels high
+    chd=t:65,20,15 holds the data for the three types of visitors
+    chxt=x turns on the labels
+    chxl=0:|Search+Engines|... adds a label for each slice of the pie
 
-  def is?(role)
-    roles.include?(role.to_s)
-  end -->
+     --> 
